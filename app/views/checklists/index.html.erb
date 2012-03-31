@@ -1,23 +1,13 @@
-<h1>Listing checklists</h1>
-
+<div class="headline">
+ 	<h1>Your Checklists</h1>       
+</div>
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Private</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @checklists.each do |checklist| %>
   <tr>
-    <td><%= checklist.name %></td>
-    <td><%= checklist.description %></td>
-    <td><%= checklist.private %></td>
-    <td><%= link_to 'Show', checklist %></td>
+    <td class=".desc-pop" rel="popover" data-content="<%= checklist.description %>"><%=  link_to checklist.name, checklist  %>
+    </td>
     <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
-    <td><%= link_to 'Destroy', checklist, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

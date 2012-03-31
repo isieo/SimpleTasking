@@ -16,7 +16,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/1.json
   def show
     @checklist = Checklist.find(params[:id])
-
+    @checklist.columns.create(:name=>"Untitled Column") if @checklist.columns.length == 0
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @checklist }

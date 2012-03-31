@@ -7,12 +7,12 @@ class Columns::Answer
   embedded_in :column
 
   def image
-    image_loc = '/assets/uncheck.png'
+    image_loc = '/assets/tick-off.png'
     case flag
     when 0
-      image_loc = '/assets/uncheck.png'
+      image_loc = '/assets/tick-off.png'
     when 1
-      image_loc = '/assets/check.jpg'
+      image_loc = '/assets/tick-on.png'
     when 2
       image_loc = '/assets/na.png'
     end
