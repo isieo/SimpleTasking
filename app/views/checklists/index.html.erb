@@ -1,17 +1,14 @@
 <div class="headline">
  	<h1>Your Checklists</h1>       
 </div>
-<table>
 
+<ul class="nav nav-tabs nav-stacked">
 <% @checklists.each do |checklist| %>
-  <tr>
-    <td class=".desc-pop" rel="popover" data-content="<%= checklist.description %>"><%=  link_to checklist.name, checklist  %>
-    </td>
-    <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
-  </tr>
+  <li>
+    <%=  link_to checklist.name, checklist  %>
+  </li>
 <% end %>
-</table>
-
+</ul>
 <br />
 
-<%= link_to 'New Checklist', new_checklist_path %>
+<%= link_to 'New Checklist', new_checklist_path, {:class=>"btn btn-success"} %>

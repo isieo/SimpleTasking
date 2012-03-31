@@ -21,7 +21,7 @@
     <%=render :partial => 'column', :collection=> @checklist.columns %>
     <!--/Add list Bar-->
     <div class="addcolumn section">
-      <%=link_to "New Column",checklist_create_column_path(@checklist)%>
+      <%=link_to image_tag('/assets/add.png',width:'60px'),checklist_create_column_path(@checklist)%>
     </div>
   </div>
 
