@@ -318,3 +318,21 @@ border-radius: 5px;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 z-index: 1;}
+
+ul.setting_box{
+        list-style:none;
+        margin:25px auto 10px;
+width:500px;
+}
+
+
+li.setting_col{
+background: #F2F2F2;
+border: 1px solid #CCC;
+height: 15px;
+padding: 10px;
+}
+
+li.setting_col span{
+padding-left: 10px;
+color: gray;}

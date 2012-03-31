@@ -1,9 +1,9 @@
 <div class="headline">
- 	<h1>Your Checklists</h1>       
+ 	<h1>Checklists to bang!</h1>       
 </div>
 <ul class="setting_box">
 <% @checklists.each do |checklist| %>
-  <li>
+  <li class="setting_col">
     <%= link_to checklist.name, checklist %>
     <span>
       <%= checklist.description %>
