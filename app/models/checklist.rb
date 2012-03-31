@@ -11,4 +11,13 @@ class Checklist
   belongs_to :user
   embeds_many :tasks, :class_name => "Checklists::Task"
   has_many :columns
+
+  def can_modified_by(current_user)
+    if user == current_user
+      return true
+    else
+      #todo: group logic
+      return false
+    end
+  end
 end

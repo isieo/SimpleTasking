@@ -1,4 +1,4 @@
-<%= simple_form_for(@checklists_task) do |f| %>
+<%= simple_form_for(@task,:url => checklist_task_path(@checklist)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

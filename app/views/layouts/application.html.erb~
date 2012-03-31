@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid content">
       <div class="row-fluid">
         <div class="span12">
           <%= yield %>
@@ -60,5 +60,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
+    %<=render 'shared/modal_me'%>
   </body>
 </html>

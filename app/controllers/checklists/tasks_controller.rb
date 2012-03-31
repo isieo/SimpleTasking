@@ -1,4 +1,5 @@
 class Checklists::TasksController < ApplicationController
+  before_filter :load_checklist
   # GET /checklists/tasks
   # GET /checklists/tasks.json
   def index
@@ -24,11 +25,12 @@ class Checklists::TasksController < ApplicationController
   # GET /checklists/tasks/new
   # GET /checklists/tasks/new.json
   def new
-    @checklists_task = Checklists::Task.new
+    @task = Checklists::Task.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @checklists_task }
+      format.text { render :partial=>'form',layout: false }
+      format.json { render json: @task }
     end
   end
 
@@ -79,5 +81,10 @@ class Checklists::TasksController < ApplicationController
       format.html { redirect_to checklists_tasks_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def load_checklist
+    @checklist = Checklist.find(params[:checklist_id])
   end
 end
