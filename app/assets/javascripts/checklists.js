@@ -14,6 +14,10 @@ $(function(){
 
   });
   jQuery(".best_in_place").best_in_place();
+  var numcols = $('.column_container > div').length ;
+
+  $('.column_container').width(numcols * $('.columns .column').innerWidth());
+  $('.columns').css('max-width',numcols * $('.columns .column').innerWidth());
 });
 
 

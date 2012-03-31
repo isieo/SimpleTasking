@@ -16,13 +16,13 @@
 
 </div>
 
-
 <div class="columns section">
-  <%=render :partial => 'column', :collection=> @checklist.columns %>
-</div>
+  <div class="column_container">
+    <%=render :partial => 'column', :collection=> @checklist.columns %>
+    <!--/Add list Bar-->
+    <div class="addcolumn section">
+      <%=link_to "New Column",checklist_create_column_path(@checklist)%>
+    </div>
+  </div>
 
-<!--/Add list Bar-->
-<div class="addcolumn section">
-<%=link_to "New Column",checklist_create_column_path(@checklist)%>
 </div>
-
