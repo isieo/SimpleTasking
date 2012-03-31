@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+.container-fluid.content{
+        padding:0
+}
+
+.hero-unit {
+        padding:40px 30px 10px;
+        margin-bottom:0;
+        background-color: #EEE;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        border-radius:0;
+}
+
+.hero-unit h1{
+        margin: 10px;
+        font-size: 60px;
+        line-height: 1;
+        color: inherit;
+        letter-spacing: -1px;
+        display: inline-block;
+}
+
+div.task.section{
+        width:200px;
+        height:auto;
+        padding:0;
+        margin:0;
+        position:absolute;
+        background:#CCC
+}
+
+div.columns.section{
+        width:auto;
+        height:auto;
+        padding:0;
+        margin:0;
+        position:absolute;
+        left:200px;
+        right:50px;
+        overflow:auto;
+        background:#999
+}
+
+div.addcolumn.section{
+        width:50px;
+        height:auto;
+        padding:0;
+        margin:0;
+        right:0;
+        background:#666;
+        position:absolute;
+}

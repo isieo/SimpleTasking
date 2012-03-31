@@ -1,0 +1,23 @@
+<h1>Listing columns_answers</h1>
+
+<table>
+  <tr>
+    <th>Flag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @columns_answers.each do |columns_answer| %>
+  <tr>
+    <td><%= columns_answer.flag %></td>
+    <td><%= link_to 'Show', columns_answer %></td>
+    <td><%= link_to 'Edit', edit_columns_answer_path(columns_answer) %></td>
+    <td><%= link_to 'Destroy', columns_answer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Answer', new_columns_answer_path %>

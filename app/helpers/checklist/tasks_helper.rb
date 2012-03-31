@@ -1,0 +1,2 @@
+module Checklist::TasksHelper
+end

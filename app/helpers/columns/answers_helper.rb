@@ -1,0 +1,2 @@
+module Columns::AnswersHelper
+end

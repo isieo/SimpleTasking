@@ -5,7 +5,7 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -40,8 +40,9 @@ gem 'jquery-rails'
 gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
 
-
+gem "acts_as_list_mongoid"
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 gem 'devise'
 gem 'modal-me', git: 'git@github.com:isieo/modal-me.git'
+gem "omniauth-facebook"

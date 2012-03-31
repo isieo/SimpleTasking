@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @column.name %>
+</p>
+
+<p>
+  <b>Pos:</b>
+  <%= @column.pos %>
+</p>
+
+
+<%= link_to 'Edit', edit_column_path(@column) %> |
+<%= link_to 'Back', columns_path %>

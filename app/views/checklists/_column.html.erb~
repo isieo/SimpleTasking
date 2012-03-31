@@ -1,0 +1,14 @@
+<div class="column">
+  <div class="column-name"><%=column.name%></div>
+  <div class="column-items">
+    <%column.checklist.tasks.each do |task|%>
+      <div>
+        <%answer = column.answers.find_or_create_by(:task_id=> task.id)%>
+        <span class="check-icons" data-answer="<%=answer.id%>" data-column="<%=answer.id%>">
+          <%=answer.flag%>
+        </span>
+      </div>
+    <%end%>
+  </div>
+</div>
+

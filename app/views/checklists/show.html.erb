@@ -1,0 +1,23 @@
+<div class="hero-unit">
+<h1><%= @checklist.name %></h1>
+<span><%= @checklist.description %></span>
+</div>
+
+<!--/Task Bar-->
+<div class="task section">
+  <%=render :partial => 'task', :collection=> @checklist.tasks %>
+</div>
+
+
+<div class="columns section">
+  <%=render :partial => 'column', :collection=> @checklist.columns %>
+</div>
+
+<!--/Add list Bar-->
+<div class="addcolumn section">
+Add button
+</div>
+
+
+<%= link_to 'Edit', edit_checklist_path(@checklist) %> |
+<%= link_to 'Back', checklists_path %>
