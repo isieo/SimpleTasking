@@ -5,13 +5,12 @@ $(function(){
       type: 'POST',
       url: '/columns/'+$(this).data('column')+'/answers/'+$(this).data('answer'),
       data: { _method:'PUT' },
-      dataType: 'json',
+      dataType: 'text',
       success: function(data){
-        element.html(data);
+        element.prop('src',data);
       },
-      async: false
+      async: true
     });
-
   });
   jQuery(".best_in_place").best_in_place();
   var numcols = $('.column_container > div').length ;
@@ -29,6 +28,7 @@ $(function(){
         }
     });
   });
+  $('.desc-pop').popover('show');
 });
 
 

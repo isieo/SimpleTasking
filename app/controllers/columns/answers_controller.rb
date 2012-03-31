@@ -5,7 +5,8 @@ class Columns::AnswersController < ApplicationController
     @columns_answer.flag = @columns_answer.flag + 1
     @columns_answer.flag = 0 if @columns_answer.flag > 2
     @columns_answer.save
-    render :json=>@columns_answer.flag
+
+    render :json=>@columns_answer.image
   end
 
   def load_column

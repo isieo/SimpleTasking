@@ -6,4 +6,5 @@ class Column
   belongs_to :checklist
   embeds_many :answers, :class_name => 'Columns::Answer'
 
+
 end
