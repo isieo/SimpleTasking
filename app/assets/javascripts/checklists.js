@@ -18,6 +18,17 @@ $(function(){
 
   $('.column_container').width(numcols * $('.columns .column').innerWidth());
   $('.columns').css('max-width',numcols * $('.columns .column').innerWidth());
+
+  $('.best_in_place').change(function() {
+    var value = $(this).children('form').children("input").val();
+    $.ajax({
+        success: function() {
+          console.log($(this));
+          $('span[data-url="'+$(this).data('url')+'"]').html(value).best_in_place();
+          location.reload(true);
+        }
+    });
+  });
 });
 
 
