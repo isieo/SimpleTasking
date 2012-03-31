@@ -6,6 +6,7 @@ SimpleTasking::Application.routes.draw do
   resources :checklists do 
       resources :tasks, :controller => 'Checklists::Tasks'
   end
+  
 
   resources :groups
 

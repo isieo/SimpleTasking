@@ -1,5 +1,5 @@
 <div class="task_item">
-<p><%=task.name%></p>
-<span class="task_desc"><%=task.description%></span>
+<p><%= best_in_place task, :name, :type => :input, :path => checklist_task_path(@checklist,task) %></p>
+<span class="task_desc"><%= best_in_place task, :description, :type => :text, :path => checklist_task_path(@checklist,task) %></span>
 <i></i>
 </div>

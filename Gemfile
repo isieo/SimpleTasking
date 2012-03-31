@@ -44,6 +44,5 @@ gem "acts_as_list_mongoid"
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
 gem 'devise'
-gem 'modal-me', git: 'git@github.com:isieo/modal-me.git'
 gem "omniauth-facebook"
 gem "best_in_place"

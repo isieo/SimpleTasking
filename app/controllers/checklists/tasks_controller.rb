@@ -3,7 +3,7 @@ class Checklists::TasksController < ApplicationController
   # GET /checklists/tasks
   # GET /checklists/tasks.json
   def index
-    @checklists_tasks = Checklists::Task.all
+    @checklists_tasks = @checklist.tasks.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class Checklists::TasksController < ApplicationController
   # GET /checklists/tasks/1
   # GET /checklists/tasks/1.json
   def show
-    @checklists_task = Checklists::Task.find(params[:id])
+    @checklists_task = @checklist.tasks.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,13 +36,13 @@ class Checklists::TasksController < ApplicationController
 
   # GET /checklists/tasks/1/edit
   def edit
-    @checklists_task = Checklists::Task.find(params[:id])
+    @checklists_task = @checklist.tasks.find(params[:id])
   end
 
   # POST /checklists/tasks
   # POST /checklists/tasks.json
   def create
-    @checklists_task = Checklists::Task.new(params[:checklists_task])
+    @checklists_task = @checklist.tasks.new(params[:checklists_task])
 
     respond_to do |format|
       if @checklists_task.save
@@ -58,7 +58,7 @@ class Checklists::TasksController < ApplicationController
   # PUT /checklists/tasks/1
   # PUT /checklists/tasks/1.json
   def update
-    @checklists_task = Checklists::Task.find(params[:id])
+    @checklists_task = @checklist.tasks.find(params[:id])
 
     respond_to do |format|
       if @checklists_task.update_attributes(params[:checklists_task])
@@ -74,7 +74,7 @@ class Checklists::TasksController < ApplicationController
   # DELETE /checklists/tasks/1
   # DELETE /checklists/tasks/1.json
   def destroy
-    @checklists_task = Checklists::Task.find(params[:id])
+    @checklists_task = @checklist.tasks.find(params[:id])
     @checklists_task.destroy
 
     respond_to do |format|

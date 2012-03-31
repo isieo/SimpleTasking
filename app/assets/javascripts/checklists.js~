@@ -7,12 +7,13 @@ $(function(){
       data: { _method:'PUT' },
       dataType: 'json',
       success: function(data){
-        $(this).html(element);
+        element.html(data);
       },
       async: false
     });
 
   });
+jQuery(".best_in_place").best_in_place();
 });
 
 
