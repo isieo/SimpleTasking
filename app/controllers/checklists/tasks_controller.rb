@@ -29,7 +29,6 @@ class Checklists::TasksController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.text { render :partial=>'form',layout: false }
       format.json { render json: @task }
     end
   end

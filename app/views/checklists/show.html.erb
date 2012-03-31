@@ -9,7 +9,7 @@
 
   <% if @checklist.can_modified_by(current_user) %>
     <div class="task_item add_new">
-      <p><%=link_to "Add New Task",new_checklist_task_path(@checklist)%></p>
+      <p><%=link_to "Add New Task",checklist_create_task_path(@checklist)%></p>
       <i></i>
     </div>
   <% end %>
@@ -23,6 +23,6 @@
 
 <!--/Add list Bar-->
 <div class="addcolumn section">
-Add button
+<%=link_to "New Column",checklist_create_column_path(@checklist)%>
 </div>
 

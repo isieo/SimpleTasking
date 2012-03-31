@@ -1,5 +1,7 @@
 <div class="column">
-  <div class="column-name"><%=column.name%></div>
+  <div class="column-name">
+<%= best_in_place column, :name, :type => :input, :path => column_path(column) %>
+</div>
   <div class="column-items">
     <%column.checklist.tasks.each do |task|%>
       <div>

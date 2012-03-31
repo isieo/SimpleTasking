@@ -4,7 +4,9 @@ SimpleTasking::Application.routes.draw do
   end
 
   resources :checklists do 
-      resources :tasks, :controller => 'Checklists::Tasks'
+    resources :tasks, :controller => 'Checklists::Tasks'
+    get 'create_task'
+    get 'create_column'    
   end
   
 

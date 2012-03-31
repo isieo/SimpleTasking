@@ -82,4 +82,16 @@ class ChecklistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def create_task
+    @checklist = Checklist.find(params[:checklist_id])
+    @checklist.tasks.create(name: "New Task", description: "Description for task")
+    redirect_to checklist_path(@checklist)
+  end
+
+  def create_column
+    @checklist = Checklist.find(params[:checklist_id])
+    @checklist.columns.create(name: "New Column", user_id: current_user.id)
+    redirect_to checklist_path(@checklist)
+  end
 end
