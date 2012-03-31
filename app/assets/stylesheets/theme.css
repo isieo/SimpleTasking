@@ -309,4 +309,12 @@ bottom: -30px;
 
 	
 /* End sign up page*/
-
+.settings_box{
+padding: 10px;
+background: #F7F7F9;
+margin: 0 18px 20px 0;
+border: 1px solid #E1E1E8;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+z-index: 1;}

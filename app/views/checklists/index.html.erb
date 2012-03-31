@@ -1,14 +1,17 @@
 <div class="headline">
  	<h1>Your Checklists</h1>       
 </div>
-
-<ul class="nav nav-tabs nav-stacked">
+<ul class="setting_box">
 <% @checklists.each do |checklist| %>
   <li>
-    <%=  link_to checklist.name, checklist  %>
+    <%= link_to checklist.name, checklist %>
+    <span>
+      <%= checklist.description %>
+    </span>
   </li>
 <% end %>
-</ul>
+</table>
+
 <br />
 
 <%= link_to 'New Checklist', new_checklist_path, {:class=>"btn btn-success"} %>
