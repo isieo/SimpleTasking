@@ -95,7 +95,7 @@ div.task_item p{
 }
 
 div.task_item i{
-	background:transparent url("../images/arrow.png") 0 0 no-repeat;
+	background:transparent url("/assets/arrow.png") 0 0 no-repeat;
 	width:14px;
 	height:14px;
 	position:absolute;
@@ -336,3 +336,5 @@ padding: 10px;
 li.setting_col span{
 padding-left: 10px;
 color: gray;}
+
+.task_item.add_new i {display:none}
