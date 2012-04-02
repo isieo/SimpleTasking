@@ -1,13 +1,15 @@
-<%= simple_form_for(@checklist) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :private, :as=>:boolean %>
-  </div>
+<div class="signup_form">
+  <%= form_for(@checklist) do |f| %>
+    <div><%= f.label :name %>
+    <%= f.text_field :name %></div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div><%= f.label :description %>
+    <%= f.text_field :description %></div>
+
+  <div class="form-remember">
+    <%= f.check_box :private %> <%= f.label :private %>
+</div>
+    <div><%= f.button :Create,class: 'btn btn-primary' %></div>
+  <% end %>
+</div>
