@@ -4,7 +4,9 @@ class ChecklistsController < ApplicationController
   # GET /checklists
   # GET /checklists.json
   def index
-    @checklists = Checklist.viewable_for(current_user).all
+    @my_checklists = Checklist.for_user(current_user).all
+
+    @public_checklists = Checklist.viewable_for(current_user).all
 
     respond_to do |format|
       format.html # index.html.erb

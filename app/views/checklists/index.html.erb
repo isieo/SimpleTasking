@@ -1,17 +1,33 @@
 <div class="headline">
  	<h1>Checklists to bang!</h1>       
 </div>
+
+<div>
+  <ul class="setting_box">
+  <li><h2>My Checklists</h2></li>
+  <% @my_checklists.each do |checklist| %>
+    <li class="setting_col">
+      <%= link_to checklist.name, checklist %>
+      <span>
+        <%= checklist.description %>
+      </span>
+    </li>
+  <% end %>
+  <li><%= link_to 'New Checklist', new_checklist_path, {:class=>"btn btn-success"} %></li>
+</ul>
+</div>
+
+<div>
+
 <ul class="setting_box">
-<% @checklists.each do |checklist| %>
+<li><h2>Public Checklists</h2></li>
+<% @public_checklists.each do |checklist| %>
   <li class="setting_col">
-    <%= link_to checklist.name, checklist %>
+    <%= link_to checklist.name, checklist %> <em>by <%= checklist.user.email.split('@').first %></em>
     <span>
       <%= checklist.description %>
     </span>
   </li>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Checklist', new_checklist_path, {:class=>"btn btn-success"} %>
+</ul>
+</div>
