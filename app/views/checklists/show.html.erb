@@ -5,16 +5,13 @@
 
 <!--/Task Bar-->
 <div class="task section">
-    <div class="task_item add_new">
-      <p></p>
-      <i></i>
+    <div class="task_item" style="background:none">
     </div>
   <%=render :partial => 'task', :collection=> @checklist.tasks %>
 
   <% if @checklist.can_modified_by(current_user) %>
     <div class="task_item add_new">
-      <p><%=link_to "Add New Task",checklist_create_task_path(@checklist)%></p>
-      <i></i>
+      <p><%=link_to image_tag('/assets/add.png',width:'30px') + "Add New Task",checklist_create_task_path(@checklist)%></p>
     </div>
   <% end %>
 

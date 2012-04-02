@@ -4,4 +4,8 @@ class Checklists::Task
   field :description, :type => String
 
   embedded_in :checklist
+  
+  def html_description
+    description.gsub('\n','<br />')
+  end
 end

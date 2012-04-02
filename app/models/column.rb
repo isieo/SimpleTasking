@@ -7,4 +7,5 @@ class Column
   embeds_many :answers, :class_name => 'Columns::Answer'
 
 
+
 end

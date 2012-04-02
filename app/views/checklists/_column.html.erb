@@ -1,16 +1,14 @@
 <div class="column_row">
-  <div class="column">
-    <div class="column-items">
-    </div>
+  <div class="column column-header">
     <div class="column-name">
-      <%= best_in_place column, :name, :type => :input, :path => column_path(column) %>
+     <%= best_in_place column, :name, :type => :input, :path => column_path(column) %>
     </div>
   </div>
 <%column.checklist.tasks.each do |task|%>
   <div class="column" data-task="<%=task.id%>">
     <div class="column-items">
       <%answer = column.answers.find_or_create_by(:task_id=> task.id)%>
-      <img src="<%=answer.image%>" width= '30px' height= '30px' class="check-icons" data-answer="<%=answer.id%>" data-column="<%=column.id%>">
+      <img src="<%=answer.image%>" width= '30px' height= '30px' class="check-icons" data-answer="<%=answer.id%>" data-column="<%=column.id%>" data-flag="<%=answer.flag%>">
     </div>
   </div>
 <%end%>

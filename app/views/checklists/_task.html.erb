@@ -1,7 +1,7 @@
-<div class="task_item">
+<div class="task_item" data-task="<%=task.id%>">
 <p><%= best_in_place task, :name, :type => :input, :path => checklist_task_path(@checklist,task) %></p>
-  <span class="task_desc" style="overflow:hidden">
-    <%= best_in_place task, :description, :type => :input, :path => checklist_task_path(@checklist,task) %>
-  </span>
 <i></i>
+  <div class="task_desc min">
+<%= best_in_place task, :description, :type => :textarea, :path => checklist_task_path(@checklist,task), :display_as => :html_description %>
+  </div>
 </div>
