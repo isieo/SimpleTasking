@@ -27,6 +27,8 @@ $(function(){
     });
   });
   jQuery(".best_in_place").best_in_place();
+  
+  jQuery(".best_in_place").change(resizeToTask)
   var numcols = $('.column_container > div').length ;
 
   $('.column_container').width(numcols * $('.columns .column').innerWidth());
@@ -38,13 +40,14 @@ $(function(){
   $('.desc-pop').popover('show');
   $('.task_desc').hide();
   
-  $('.task_item i').click(function(){
-    $(this).toggleClass("down");
-    if ($(this).hasClass("down")){
+  
+  $('div.task_item').click(function(){
+    $(this).children('i:first').toggleClass("down");
+    if ($(this).children('i:first').hasClass("down")){
       
-      $(this).next('.task_desc').fadeIn(100,resizeToTask);
+      $(this).children('.task_desc:first').fadeIn(100,resizeToTask);
     }else{
-      $(this).next('.task_desc').fadeOut(100,resizeToTask);
+      $(this).children('.task_desc:first').fadeOut(100,resizeToTask);
     }
   });
   
