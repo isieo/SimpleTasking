@@ -15,12 +15,15 @@ function toggleTaskDropDown(task_element){
 }
 
 function setPrivateImage(element){
-    element.css("cursor","pointer").css("display","block").css("height","50px").css("width","50px");
+    element.css("cursor","pointer").css("display","block")
+           .css("width",element.parent('[data-icon-width*=]:first').data('icon-width'))
+           .css("height",element.parent('[data-icon-width*=]:first').data('icon-width'));;
     if (element.text() == 'private'){
       element.css("background",'url("/assets/lock.png")');
     }else{
       element.css("background",'url("/assets/unlock.png")');
     };
+    element.css("background-size", "100%");
     element.css("text-indent", "200%");
     element.css("overflow", "hidden");
     element.css("white-space", "nowrap");
@@ -73,6 +76,7 @@ $(function(){
   });
   
   setPrivateImage($('.best_in_place[data-attribute=private]'));
+  setPrivateImage($('.best_in_place[data-attribute=private][data-object=column]'));
   resizeToTask();
 });
 

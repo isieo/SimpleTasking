@@ -2,8 +2,10 @@ class Column
   include Mongoid::Document
   field :name, :type => String
   field :pos, :type => Integer
+  field :private, :type => Boolean, :default => false
   include ActsAsList::Mongoid 
   acts_as_list :column => :pos
+  
   
   belongs_to :checklist
   belongs_to :user

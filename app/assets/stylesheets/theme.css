@@ -108,6 +108,11 @@ div.task_item i{
 	cursor: pointer;
 }
 
+
+img.check-icons{
+	cursor: pointer;
+}
+
 div.task_item i.down{
 	background:transparent url("/assets/arrow-v.png") 0 0 no-repeat;
 }

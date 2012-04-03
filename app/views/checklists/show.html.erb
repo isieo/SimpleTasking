@@ -1,6 +1,6 @@
 <div class="hero-unit">
   <%if @checklist.user == current_user%>
-    <div style="float:right;margin-top:10px;">
+    <div style="float:right;margin-top:10px;" data-icon-width="50px">
     <%= best_in_place @checklist, :private, :type=>:checkbox, :collection => ['public','private'] %>
     </div>
   <%end%>
