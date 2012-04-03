@@ -7,6 +7,8 @@
   <li><h2>My Checklists</h2></li>
   <% @my_checklists.each do |checklist| %>
     <li class="setting_col">
+      <%=image_tag('/assets/lock.png',width: '20px',alt:"Private",title:"Private") if checklist.private%>
+      <%=image_tag('/assets/unlock.png',width: '20px',alt:"Public",title:"Public") if !checklist.private%>
       <%= link_to checklist.name, checklist %>
       <span>
         <%= checklist.description %>
@@ -23,6 +25,8 @@
 <li><h2>Public Checklists</h2></li>
 <% @public_checklists.each do |checklist| %>
   <li class="setting_col">
+      <%=image_tag('/assets/lock.png',width: '20px',alt:"Private",title:"Private") if checklist.private%>
+      <%=image_tag('/assets/unlock.png',width: '20px',alt:"Public",title:"Public") if !checklist.private%>
     <%= link_to checklist.name, checklist %> <em>by <%= checklist.user.email.split('@').first %></em>
     <span>
       <%= checklist.description %>

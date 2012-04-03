@@ -1,7 +1,18 @@
 <div class="task_item" data-task="<%=task.id%>">
-<p><%= best_in_place task, :name, :type => :input, :path => checklist_task_path(@checklist,task) %></p>
+<p>
+  <%if @checklist.user == current_user%>
+    <%= best_in_place task, :name, :type => :input, :path => checklist_task_path(@checklist,task) %>
+  <%else%>
+    <%=task.name%>
+  <%end%>
+ </p>
 <i></i>
   <div class="task_desc min">
+  <%if @checklist.user == current_user%>
 <%= best_in_place task, :description, :type => :textarea, :path => checklist_task_path(@checklist,task), :display_as => :html_description %>
+  <%else%>
+<%=task.html_description%>
+  <%end%>
+
   </div>
 </div>

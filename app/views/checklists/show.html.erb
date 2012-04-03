@@ -1,6 +1,19 @@
 <div class="hero-unit">
-<h1><%= @checklist.name %></h1>
-<span><%= @checklist.description %></span>
+  <%if @checklist.user == current_user%>
+    <div style="float:right;margin-top:10px;">
+    <%= best_in_place @checklist, :private, :type=>:checkbox, :collection => ['public','private'] %>
+    </div>
+  <%end%>
+  <%if @checklist.user == current_user%>
+    <h1><%= best_in_place @checklist, :name  %></h1>
+  <%else%>
+    <h1><%= @checklist.name %></h1>
+  <%end%>
+  <%if @checklist.user == current_user%>
+    <span class="desc"><%= best_in_place @checklist, :description  %></span>
+  <%else%>
+    <span class="desc"><%= @checklist.description %></span>
+  <%end%>
 </div>
 
 <!--/Task Bar-->

@@ -14,6 +14,18 @@ function toggleTaskDropDown(task_element){
   }
 }
 
+function setPrivateImage(element){
+    element.css("cursor","pointer").css("display","block").css("height","50px").css("width","50px");
+    if (element.text() == 'private'){
+      element.css("background",'url("/assets/lock.png")');
+    }else{
+      element.css("background",'url("/assets/unlock.png")');
+    };
+    element.css("text-indent", "200%");
+    element.css("overflow", "hidden");
+    element.css("white-space", "nowrap");
+}
+
 $(function(){
   $('.check-icons').click(function(){
     element = $(this);
@@ -47,6 +59,12 @@ $(function(){
   $('.best_in_place').change(function() {
     resizeToTask();
   });
+  
+  
+  
+  $('.best_in_place[data-attribute=private]').live('ajax:success',function(){
+    setPrivateImage($(this));
+  });
   $('.desc-pop').popover('show');
   $('.task_desc').hide();
   
@@ -54,6 +72,7 @@ $(function(){
     toggleTaskDropDown($(this))
   });
   
+  setPrivateImage($('.best_in_place[data-attribute=private]'));
   resizeToTask();
 });
 
