@@ -4,6 +4,16 @@ function resizeToTask(){
   });
 }
 
+function toggleTaskDropDown(task_element){
+  task_element.toggleClass("down");
+  if (task_element.hasClass("down")){
+    
+    task_element.next('.task_desc').fadeIn(100,resizeToTask);
+  }else{
+    task_element.next('.task_desc').fadeOut(100,resizeToTask);
+  }
+}
+
 $(function(){
   $('.check-icons').click(function(){
     element = $(this);
@@ -40,15 +50,8 @@ $(function(){
   $('.desc-pop').popover('show');
   $('.task_desc').hide();
   
-  
-  $('div.task_item').click(function(){
-    $(this).children('i:first').toggleClass("down");
-    if ($(this).children('i:first').hasClass("down")){
-      
-      $(this).children('.task_desc:first').fadeIn(100,resizeToTask);
-    }else{
-      $(this).children('.task_desc:first').fadeOut(100,resizeToTask);
-    }
+  $('.task_item i').click(function(){
+    toggleTaskDropDown($(this))
   });
   
   resizeToTask();

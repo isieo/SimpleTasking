@@ -19,7 +19,7 @@
 
 <div class="columns section">
   <div class="column_container">
-    <%=render :partial => 'column', :collection=> @checklist.columns %>
+    <%=render :partial => 'column', :collection=> @checklist.columns.for_user(current_user) %>
     <!--/Add list Bar-->
     <div class="addcolumn section">
       <%=link_to image_tag('/assets/add.png',width:'45px'),checklist_create_column_path(@checklist)%>
