@@ -7,7 +7,7 @@ function resizeToTask(){
 function toggleTaskDropDown(task_element){
   task_element.toggleClass("down");
   if (task_element.hasClass("down")){
-    
+
     task_element.next('.task_desc').fadeIn(100,resizeToTask);
   }else{
     task_element.next('.task_desc').fadeOut(100,resizeToTask);
@@ -52,7 +52,7 @@ $(function(){
     });
   });
   jQuery(".best_in_place").best_in_place();
-  
+
   jQuery(".best_in_place").change(resizeToTask)
   var numcols = $('.column_container > div').length ;
 
@@ -62,22 +62,20 @@ $(function(){
   $('.best_in_place').change(function() {
     resizeToTask();
   });
-  
-  
-  
-  $('.best_in_place[data-attribute=private]').live('ajax:success',function(){
+
+
+
+  $('.best_in_place[data-attribute=private]').ready('ajax:success',function(){
     setPrivateImage($(this));
   });
-  $('.desc-pop').popover('show');
+  // $('.desc-pop').popover('show');
   $('.task_desc').hide();
-  
+
   $('.task_item i').click(function(){
     toggleTaskDropDown($(this))
   });
-  
-  setPrivateImage($('.best_in_place[data-attribute=private]'));
-  setPrivateImage($('.best_in_place[data-attribute=private][data-object=column]'));
+
+  // setPrivateImage($('.best_in_place[data-attribute=private]'));
+  // setPrivateImage($('.best_in_place[data-attribute=private][data-object=column]'));
   resizeToTask();
 });
-
-

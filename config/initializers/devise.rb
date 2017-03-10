@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   require "omniauth-facebook"
-  config.omniauth :facebook, "238927446204808", "b39ad14d51b92cd5a8b8a5bd7a685b54", {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
+  config.omniauth :facebook, "238927446204808", "b39ad14d51b92cd5a8b8a5bd7a685b54", {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -13,7 +13,8 @@ Devise.setup do |config|
   # config.mailer = "Devise::Mailer"
 
   # Automatically apply schema changes in tableless databases
-  config.apply_schema = false
+  # config.apply_schema = false
+  config.secret_key = 'ff179e589a16d981cd9e08c626f3ae62a5b2ecc6bb8dff6cc76a27c40531119176ce3460adef95d079d2f86b7402843768d087ce4ed70d167571495602cea7ed'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -116,7 +117,7 @@ Devise.setup do |config|
 
   # If true, uses the password salt as remember token. This should be turned
   # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
+  # config.use_salt_as_remember_token = true
 
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.

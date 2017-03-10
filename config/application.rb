@@ -6,7 +6,7 @@ require "active_resource/railtie"
 require "rails/test_unit/railtie"
 require "sprockets/railtie"
 
-# Auto-require default libraries and those for the current Rails environment. 
+# Auto-require default libraries and those for the current Rails environment.
 Bundler.require :default, Rails.env
 
 if defined?(Bundler)
@@ -28,7 +28,8 @@ module SimpleTasking
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-
+    # config.assets.css_compressor = :yui
+    # config.assets.js_compressor = :uglifier
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
